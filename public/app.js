@@ -33372,7 +33372,7 @@
 	});
 
 	exports['default'] = function ($scope) {
-	  $scope.name = 'Welcome to About';
+	  $scope.name = 'About';
 	};
 
 	module.exports = exports['default'];
