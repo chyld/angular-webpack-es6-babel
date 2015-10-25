@@ -56,9 +56,25 @@
 
 	var _angularUiRouter2 = _interopRequireDefault(_angularUiRouter);
 
-	var _controllersAboutJs = __webpack_require__(5);
+	var _controllersGeneralAboutJs = __webpack_require__(7);
 
-	var _controllersAboutJs2 = _interopRequireDefault(_controllersAboutJs);
+	var _controllersGeneralAboutJs2 = _interopRequireDefault(_controllersGeneralAboutJs);
+
+	var _controllersSalesNewJs = __webpack_require__(8);
+
+	var _controllersSalesNewJs2 = _interopRequireDefault(_controllersSalesNewJs);
+
+	var _controllersSalesListJs = __webpack_require__(9);
+
+	var _controllersSalesListJs2 = _interopRequireDefault(_controllersSalesListJs);
+
+	var _controllersSalesShowJs = __webpack_require__(10);
+
+	var _controllersSalesShowJs2 = _interopRequireDefault(_controllersSalesShowJs);
+
+	var _modelsSaleJs = __webpack_require__(11);
+
+	var _modelsSaleJs2 = _interopRequireDefault(_modelsSaleJs);
 
 	var _configConfigJs = __webpack_require__(6);
 
@@ -66,7 +82,7 @@
 
 	var app = _angular2['default'].module('myApp', ['ui.router']);
 
-	app.config(_configConfigJs2['default']).controller('AboutCtrl', _controllersAboutJs2['default']);
+	app.config(_configConfigJs2['default']).controller('AboutCtrl', _controllersGeneralAboutJs2['default']).controller('SalesNewCtrl', _controllersSalesNewJs2['default']).controller('SalesListCtrl', _controllersSalesListJs2['default']).controller('SalesShowCtrl', _controllersSalesShowJs2['default']).factory('Sale', _modelsSaleJs2['default']);
 
 /***/ },
 /* 1 */
@@ -33362,7 +33378,26 @@
 
 /***/ },
 /* 4 */,
-/* 5 */
+/* 5 */,
+/* 6 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	exports['default'] = function ($stateProvider, $urlRouterProvider) {
+	  $urlRouterProvider.otherwise('/');
+
+	  $stateProvider.state('home', { url: '/', templateUrl: '/views/general/home.html' }).state('about', { url: '/about', templateUrl: '/views/general/about.html', controller: 'AboutCtrl' }).state('sales_new', { url: '/sales/new', templateUrl: '/views/sales/new.html', controller: 'SalesNewCtrl' }).state('sales_list', { url: '/sales', templateUrl: '/views/sales/list.html', controller: 'SalesListCtrl' }).state('sales_show', { url: '/sales/{id}', templateUrl: '/views/sales/show.html', controller: 'SalesShowCtrl' });
+	};
+
+	module.exports = exports['default'];
+
+/***/ },
+/* 7 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -33378,7 +33413,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 6 */
+/* 8 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -33387,10 +33422,88 @@
 	  value: true
 	});
 
-	exports['default'] = function ($stateProvider, $urlRouterProvider) {
-	  $urlRouterProvider.otherwise('/');
+	exports['default'] = function ($scope, Sale) {
+	  $scope.name = 'New';
+	  $scope.add = function (sale) {
+	    var s = new Sale(sale);
+	    s.save().then(function (response) {
+	      return console.log('res', response);
+	    })['catch'](function (err) {
+	      return console.log('err', err);
+	    });
+	  };
+	};
 
-	  $stateProvider.state('home', { url: '/', templateUrl: '/views/general/home.html' }).state('about', { url: '/about', templateUrl: '/views/general/about.html', controller: 'AboutCtrl' });
+	module.exports = exports['default'];
+
+/***/ },
+/* 9 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	exports['default'] = function ($scope) {
+	  $scope.name = 'List';
+	};
+
+	module.exports = exports['default'];
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	exports['default'] = function ($scope) {
+	  $scope.name = 'Show';
+	};
+
+	module.exports = exports['default'];
+
+/***/ },
+/* 11 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	exports['default'] = function ($http) {
+	  var Sale = (function () {
+	    function Sale(obj) {
+	      _classCallCheck(this, Sale);
+
+	      this.from = obj.from;
+	      this.to = obj.to;
+	      this.description = obj.description;
+	      this.amount = obj.amount;
+	    }
+
+	    _createClass(Sale, [{
+	      key: 'save',
+	      value: function save() {
+	        return $http.post('/sales', this);
+	      }
+	    }]);
+
+	    return Sale;
+	  })();
+
+	  return Sale;
 	};
 
 	module.exports = exports['default'];
