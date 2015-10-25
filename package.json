@@ -18,7 +18,10 @@
     "method-override": "^2.3.5",
     "morgan": "^1.6.1",
     "multer": "^1.1.0",
-    "request": "^2.65.0"
+    "pg": "^4.4.3",
+    "pg-hstore": "^2.3.2",
+    "request": "^2.65.0",
+    "sequelize": "^3.12.2"
   },
   "devDependencies": {
     "babel-core": "^5.8.25",

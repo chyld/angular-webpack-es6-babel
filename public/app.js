@@ -56,27 +56,27 @@
 
 	var _angularUiRouter2 = _interopRequireDefault(_angularUiRouter);
 
-	var _controllersGeneralAboutJs = __webpack_require__(7);
+	var _controllersGeneralAboutJs = __webpack_require__(4);
 
 	var _controllersGeneralAboutJs2 = _interopRequireDefault(_controllersGeneralAboutJs);
 
-	var _controllersSalesNewJs = __webpack_require__(8);
+	var _controllersSalesNewJs = __webpack_require__(5);
 
 	var _controllersSalesNewJs2 = _interopRequireDefault(_controllersSalesNewJs);
 
-	var _controllersSalesListJs = __webpack_require__(9);
+	var _controllersSalesListJs = __webpack_require__(6);
 
 	var _controllersSalesListJs2 = _interopRequireDefault(_controllersSalesListJs);
 
-	var _controllersSalesShowJs = __webpack_require__(10);
+	var _controllersSalesShowJs = __webpack_require__(7);
 
 	var _controllersSalesShowJs2 = _interopRequireDefault(_controllersSalesShowJs);
 
-	var _modelsSaleJs = __webpack_require__(11);
+	var _modelsSaleJs = __webpack_require__(8);
 
 	var _modelsSaleJs2 = _interopRequireDefault(_modelsSaleJs);
 
-	var _configConfigJs = __webpack_require__(6);
+	var _configConfigJs = __webpack_require__(9);
 
 	var _configConfigJs2 = _interopRequireDefault(_configConfigJs);
 
@@ -33377,27 +33377,7 @@
 	})(window, window.angular);
 
 /***/ },
-/* 4 */,
-/* 5 */,
-/* 6 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-
-	exports['default'] = function ($stateProvider, $urlRouterProvider) {
-	  $urlRouterProvider.otherwise('/');
-
-	  $stateProvider.state('home', { url: '/', templateUrl: '/views/general/home.html' }).state('about', { url: '/about', templateUrl: '/views/general/about.html', controller: 'AboutCtrl' }).state('sales_new', { url: '/sales/new', templateUrl: '/views/sales/new.html', controller: 'SalesNewCtrl' }).state('sales_list', { url: '/sales', templateUrl: '/views/sales/list.html', controller: 'SalesListCtrl' }).state('sales_show', { url: '/sales/{id}', templateUrl: '/views/sales/show.html', controller: 'SalesShowCtrl' });
-	};
-
-	module.exports = exports['default'];
-
-/***/ },
-/* 7 */
+/* 4 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -33413,7 +33393,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 8 */
+/* 5 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -33437,7 +33417,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 9 */
+/* 6 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -33453,7 +33433,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 10 */
+/* 7 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -33469,7 +33449,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 11 */
+/* 8 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -33504,6 +33484,24 @@
 	  })();
 
 	  return Sale;
+	};
+
+	module.exports = exports['default'];
+
+/***/ },
+/* 9 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	exports['default'] = function ($stateProvider, $urlRouterProvider) {
+	  $urlRouterProvider.otherwise('/');
+
+	  $stateProvider.state('home', { url: '/', templateUrl: '/views/general/home.html' }).state('about', { url: '/about', templateUrl: '/views/general/about.html', controller: 'AboutCtrl' }).state('sales_new', { url: '/sales/new', templateUrl: '/views/sales/new.html', controller: 'SalesNewCtrl' }).state('sales_list', { url: '/sales', templateUrl: '/views/sales/list.html', controller: 'SalesListCtrl' }).state('sales_show', { url: '/sales/{id}', templateUrl: '/views/sales/show.html', controller: 'SalesShowCtrl' });
 	};
 
 	module.exports = exports['default'];
