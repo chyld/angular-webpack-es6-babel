@@ -19,4 +19,10 @@ router.get('/', function(req, res) {
   });
 });
 
+router.get('/:id', function(req, res) {
+  models.Sale.findById(req.params.id).then(function(sale){
+    res.send(sale);
+  });
+});
+
 module.exports = router;

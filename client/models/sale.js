@@ -12,6 +12,9 @@ export default function($http){
     static all(){
       return $http.get('/sales');
     }
+    static find(id){
+      return $http.get(`/sales/${id}`);
+    }
   }
 
   return Sale;

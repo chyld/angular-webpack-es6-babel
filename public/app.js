@@ -33445,8 +33445,11 @@
 	  value: true
 	});
 
-	exports['default'] = function ($scope) {
+	exports['default'] = function ($scope, $state, Sale) {
 	  $scope.name = 'Show';
+	  Sale.find($state.params.id).then(function (r) {
+	    return $scope.sale = r.data;
+	  });
 	};
 
 	module.exports = exports['default'];
@@ -33485,6 +33488,11 @@
 	      key: 'all',
 	      value: function all() {
 	        return $http.get('/sales');
+	      }
+	    }, {
+	      key: 'find',
+	      value: function find(id) {
+	        return $http.get('/sales/' + id);
 	      }
 	    }]);
 

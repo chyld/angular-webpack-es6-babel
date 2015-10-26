@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Id</th>
       <th>From</th>
       <th>To</th>
       <th>Description</th>
@@ -11,6 +12,7 @@
   </thead>
   <tbody>
     <tr ng-repeat="sale in sales">
+      <td><a ui-sref='sales_show({id: sale.id})'>{{sale.id}}</a></td>
       <td>{{sale.from}}</td>
       <td>{{sale.to}}</td>
       <td>{{sale.description}}</td>
