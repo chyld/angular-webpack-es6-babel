@@ -1,20 +1,18 @@
 {
   "name": "ang-x",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Sample Angular, Webpack, Babel, ES2015, Gulp, Postgres, Express Application",
   "scripts": {
     "start": "node ./server/app.js",
     "watch": "webpack --progress --colors --watch"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Chyld Medford <chyld.medford@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "angular": "^1.4.7",
     "angular-ui-router": "^0.2.15",
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
-    "gulp": "^3.9.0",
     "method-override": "^2.3.5",
     "morgan": "^1.6.1",
     "multer": "^1.1.0",
@@ -26,6 +24,10 @@
   "devDependencies": {
     "babel-core": "^5.8.25",
     "babel-loader": "^5.3.2",
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-copy": "0.0.2",
+    "gulp-watch": "^4.3.5",
     "webpack": "^1.12.2"
   }
 }
