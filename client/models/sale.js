@@ -9,6 +9,9 @@ export default function($http){
     save(){
       return $http.post('/sales', this);
     }
+    static all(){
+      return $http.get('/sales');
+    }
   }
 
   return Sale;

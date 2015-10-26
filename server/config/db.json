@@ -2,21 +2,21 @@
   "development": {
     "username": "postgres",
     "password": "chyld",
-    "database": "database_dev",
+    "database": "sales_dev",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
     "username": "postgres",
     "password": "chyld",
-    "database": "database_test",
+    "database": "sales_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
     "username": "postgres",
     "password": "chyld",
-    "database": "database_production",
+    "database": "sales_production",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }

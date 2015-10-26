@@ -24,5 +24,4 @@ models.sequelize.sync().then(function () {
   });
 });
 
-app.use('/home', require('./routes/index'));
-app.use('/users', require('./routes/users'));
+app.use('/sales', require('./routes/sales'));

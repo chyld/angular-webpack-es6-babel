@@ -1,1 +1,20 @@
-list
+<h3>{{name}}</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>From</th>
+      <th>To</th>
+      <th>Description</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="sale in sales">
+      <td>{{sale.from}}</td>
+      <td>{{sale.to}}</td>
+      <td>{{sale.description}}</td>
+      <td>{{sale.amount}}</td>
+    </tr>
+  </tbody>
+</table>

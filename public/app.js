@@ -33402,12 +33402,12 @@
 	  value: true
 	});
 
-	exports['default'] = function ($scope, Sale) {
+	exports['default'] = function ($scope, Sale, $state) {
 	  $scope.name = 'New';
 	  $scope.add = function (sale) {
 	    var s = new Sale(sale);
-	    s.save().then(function (response) {
-	      return console.log('res', response);
+	    s.save().then(function () {
+	      return $state.go('sales_list');
 	    })['catch'](function (err) {
 	      return console.log('err', err);
 	    });
@@ -33426,8 +33426,11 @@
 	  value: true
 	});
 
-	exports['default'] = function ($scope) {
+	exports['default'] = function ($scope, Sale, $state) {
 	  $scope.name = 'List';
+	  Sale.all().then(function (r) {
+	    return $scope.sales = r.data;
+	  });
 	};
 
 	module.exports = exports['default'];
@@ -33477,6 +33480,11 @@
 	      key: 'save',
 	      value: function save() {
 	        return $http.post('/sales', this);
+	      }
+	    }], [{
+	      key: 'all',
+	      value: function all() {
+	        return $http.get('/sales');
 	      }
 	    }]);
 
